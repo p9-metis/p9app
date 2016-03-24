@@ -1,0 +1,52 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "Swagger API documentation for MyJavaService",
+    "version" : "2.0",
+    "title" : "MyJavaServiceService Swagger Documentation",
+    "x-WM-SERVICE_TYPE" : "JavaService",
+    "x-WM-SERVICE_ID" : "MyJavaService"
+  },
+  "basePath" : "/",
+  "tags" : [ {
+    "name" : "MyJavaController",
+    "x-WM-FULLY_QUALIFIED_NAME" : "com.p9app.myjavaservice.controller.MyJavaController",
+    "x-WM-CONTROLLER_NAME" : "MyJava",
+    "x-WM-VERSION" : ""
+  } ],
+  "schemes" : [ "http", "https" ],
+  "paths" : {
+    "/myJava/sampleJavaOperation" : {
+      "get" : {
+        "tags" : [ "MyJavaController" ],
+        "operationId" : "MyJavaController-sampleJavaOperation-1-1195260122",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "name",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "x-WM-UUID" : "165bd72e-03cb-4b4e-a405-1d6f27c6ffc1",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "d4f3789b-576f-4dd2-a6aa-31fba19294ec",
+        "x-WM-METHOD_NAME" : "sampleJavaOperation",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
+      },
+      "x-WM-TAG" : "MyJavaController",
+      "x-WM-BASE_PATH" : "/myJava",
+      "x-WM-COMPLETE_PATH" : "/myJava/sampleJavaOperation",
+      "x-WM-RELATIVE_PATH" : "/sampleJavaOperation"
+    }
+  },
+  "definitions" : { }
+}
