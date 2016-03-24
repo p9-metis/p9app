@@ -23,7 +23,7 @@ public class MyJavaService {
     public String sampleJavaOperation(String name) {
         String result = null;
         try {
-            logger.debug("Starting sample operation");
+            logger.debug("Prova modifica");
             result = "Hello " + name + "!";
             logger.debug("Returning {}", result);
             return result;
