@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.p9app.mytestdatabase">
+  <class table="`User`" name="com.p9app.mytestdatabase.User" entity-name="com.p9app.mytestdatabase.User">
+    <id name="id" type="java.lang.Integer">
+      <column name="`ID`" length="255" not-null="true" precision="10"/>
+      <generator class="identity"/>
+    </id>
+    <property name="column2" type="java.lang.String">
+      <column name="`COLUMN2`" length="255" not-null="false" precision="19"/>
+    </property>
+    <property name="column3" type="java.lang.String">
+      <column name="`COLUMN3`" length="255" not-null="false" precision="19"/>
+    </property>
+    <property name="column4" type="java.lang.String">
+      <column name="`COLUMN4`" length="255" not-null="false" precision="19"/>
+    </property>
+  </class>
+</hibernate-mapping>

@@ -1,4 +1,20 @@
 {
+  "appNotification" : {
+    "_id" : "wm-appErrorHandler-wm.NotificationVariable-1454664620943",
+    "name" : "appNotification",
+    "owner" : "App",
+    "category" : "wm.NotificationVariable",
+    "dataBinding" : [ {
+      "target" : "class",
+      "value" : "Error",
+      "type" : "list"
+    }, {
+      "target" : "toasterPosition",
+      "value" : "bottom right",
+      "type" : "list"
+    } ],
+    "operation" : "toast"
+  },
   "goToPage_Main" : {
     "_id" : "wm-wm.NavigationVariable1389180517517",
     "name" : "goToPage_Main",
@@ -6,6 +22,96 @@
     "category" : "wm.NavigationVariable",
     "operation" : "gotoPage",
     "pageName" : "Main"
+  },
+  "MyTestDatabaseUserData" : {
+    "_id" : "wm-MyTestDatabaseUserData-wm.LiveVariable-1458756808003",
+    "name" : "MyTestDatabaseUserData",
+    "owner" : "App",
+    "category" : "wm.LiveVariable",
+    "dataBinding" : [ ],
+    "operation" : "read",
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "User",
+    "isList" : true,
+    "saveInPhonegap" : false,
+    "firstRow" : 0,
+    "maxResults" : 20,
+    "designMaxResults" : 10,
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "liveSource" : "MyTestDatabase",
+    "ignoreCase" : false,
+    "matchMode" : "start",
+    "propertiesMap" : {
+      "columns" : [ {
+        "fieldName" : "id",
+        "type" : "integer",
+        "fullyQualifiedType" : "integer",
+        "columnName" : "ID",
+        "isPrimaryKey" : true,
+        "notNull" : true,
+        "length" : 255,
+        "precision" : 10,
+        "generator" : "identity",
+        "isRelated" : false,
+        "defaultValue" : "",
+        "scale" : 0
+      }, {
+        "fieldName" : "column2",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "COLUMN2",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 19,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "",
+        "scale" : 0
+      }, {
+        "fieldName" : "column3",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "COLUMN3",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 19,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "",
+        "scale" : 0
+      }, {
+        "fieldName" : "column4",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "COLUMN4",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 19,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "",
+        "scale" : 0
+      } ],
+      "entityName" : "User",
+      "fullyQualifiedName" : "com.p9app.mytestdatabase.User",
+      "tableType" : "TABLE",
+      "primaryFields" : [ "id" ]
+    },
+    "isDefault" : true,
+    "tableName" : "User",
+    "tableType" : "TABLE",
+    "dbSystem" : "MySQL",
+    "properties" : [ ],
+    "relatedTables" : [ ],
+    "package" : "com.p9app.mytestdatabase.User"
   },
   "supportedLocale" : {
     "_id" : "wm-wm.Variable1402640443182",
@@ -18,24 +124,5 @@
     "type" : "string",
     "isList" : false,
     "saveInPhonegap" : false
-  },
-  "appNotification": {
-      "_id": "wm-appErrorHandler-wm.NotificationVariable-1454664620943",
-      "name": "appNotification",
-      "owner": "App",
-      "category": "wm.NotificationVariable",
-      "dataBinding": [
-        {
-          "target": "class",
-          "value": "Error",
-          "type": "list"
-        },
-        {
-          "target": "toasterPosition",
-          "value": "bottom right",
-          "type": "list"
-        }
-      ],
-      "operation": "toast"
-    }
+  }
 }

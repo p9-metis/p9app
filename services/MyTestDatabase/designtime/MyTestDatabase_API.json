@@ -1,0 +1,699 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "Swagger API documentation for MyTestDatabase",
+    "version" : "2.0",
+    "title" : "MyTestDatabaseService Swagger Documentation",
+    "x-WM-SERVICE_TYPE" : "DataService",
+    "x-WM-SERVICE_ID" : "MyTestDatabase"
+  },
+  "basePath" : "/",
+  "tags" : [ {
+    "name" : "UserController",
+    "description" : "Exposes APIs to work with User resource.",
+    "x-WM-FULLY_QUALIFIED_NAME" : "com.p9app.mytestdatabase.controller.UserController",
+    "x-WM-CONTROLLER_NAME" : "User",
+    "x-WM-VERSION" : ""
+  }, {
+    "name" : "QueryExecutionController",
+    "description" : "Controller class for query execution",
+    "x-WM-FULLY_QUALIFIED_NAME" : "com.p9app.mytestdatabase.controller.QueryExecutionController",
+    "x-WM-CONTROLLER_NAME" : "QueryExecution",
+    "x-WM-VERSION" : ""
+  }, {
+    "name" : "ProcedureExecutionController",
+    "description" : "Controller class for procedure execution",
+    "x-WM-FULLY_QUALIFIED_NAME" : "com.p9app.mytestdatabase.controller.ProcedureExecutionController",
+    "x-WM-CONTROLLER_NAME" : "ProcedureExecution",
+    "x-WM-VERSION" : ""
+  } ],
+  "schemes" : [ "https", "http" ],
+  "paths" : {
+    "/MyTestDatabase/User/" : {
+      "get" : {
+        "tags" : [ "UserController" ],
+        "description" : "Returns the list of User instances.",
+        "operationId" : "UserController-getUsers-1-934028971",
+        "parameters" : [ {
+          "name" : "page",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
+        }, {
+          "name" : "size",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : 20,
+          "format" : "int32",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "sort",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "x-WM-EDITABLE" : false
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Page",
+              "x-WM-TYPE_ARGUMENTS" : [ {
+                "$ref" : "#/definitions/User",
+                "x-WM-TYPE_ARGUMENTS" : [ ]
+              } ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "7f092a58-ae38-45a7-8fc7-d7fa7a4ebb85",
+        "x-WM-METHOD_NAME" : "getUsers",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
+      },
+      "post" : {
+        "tags" : [ "UserController" ],
+        "description" : "Creates a new User instance.",
+        "operationId" : "UserController-createUser-1--1780302318",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "User",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/User",
+            "x-WM-TYPE_ARGUMENTS" : [ ]
+          },
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.p9app.mytestdatabase.User",
+          "x-WM-UUID" : "96d27e64-d47c-47ed-846a-be228d32adee",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/User",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "3d9d065a-0f80-473a-b064-b790f285db28",
+        "x-WM-METHOD_NAME" : "createUser",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
+      },
+      "x-WM-TAG" : "UserController",
+      "x-WM-BASE_PATH" : "/MyTestDatabase/User",
+      "x-WM-COMPLETE_PATH" : "/MyTestDatabase/User/",
+      "x-WM-RELATIVE_PATH" : "/"
+    },
+    "/MyTestDatabase/User/count" : {
+      "get" : {
+        "tags" : [ "UserController" ],
+        "description" : "Returns the total count of User instances.",
+        "operationId" : "UserController-countAllUsers-0-17",
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "type" : "integer",
+              "format" : "int64"
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "f415120a-7259-4a62-a6f2-42bd0727846a",
+        "x-WM-METHOD_NAME" : "countAllUsers",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
+      },
+      "x-WM-TAG" : "UserController",
+      "x-WM-BASE_PATH" : "/MyTestDatabase/User",
+      "x-WM-COMPLETE_PATH" : "/MyTestDatabase/User/count",
+      "x-WM-RELATIVE_PATH" : "/count"
+    },
+    "/MyTestDatabase/User/search" : {
+      "post" : {
+        "tags" : [ "UserController" ],
+        "description" : "Returns the list of User instances matching the search criteria.",
+        "operationId" : "UserController-findUsers-2--1821969279",
+        "parameters" : [ {
+          "name" : "page",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
+        }, {
+          "name" : "size",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : 20,
+          "format" : "int32",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "sort",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "x-WM-EDITABLE" : false
+        }, {
+          "in" : "body",
+          "name" : "QueryFilter",
+          "required" : true,
+          "schema" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/QueryFilter",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            },
+            "x-WM-IS_LIST" : false
+          },
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.wavemaker.runtime.data.expression.QueryFilter",
+          "x-WM-UUID" : "27ab4e9a-3f69-4708-8772-30fe3eef8968",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Page",
+              "x-WM-TYPE_ARGUMENTS" : [ {
+                "$ref" : "#/definitions/User",
+                "x-WM-TYPE_ARGUMENTS" : [ ]
+              } ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "4916a622-a091-4968-9f31-57d106127330",
+        "x-WM-METHOD_NAME" : "findUsers",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
+      },
+      "x-WM-TAG" : "UserController",
+      "x-WM-BASE_PATH" : "/MyTestDatabase/User",
+      "x-WM-COMPLETE_PATH" : "/MyTestDatabase/User/search",
+      "x-WM-RELATIVE_PATH" : "/search"
+    },
+    "/MyTestDatabase/User/{id}" : {
+      "get" : {
+        "tags" : [ "UserController" ],
+        "description" : "Returns the User instance associated with the given id.",
+        "operationId" : "UserController-getUser-1--2056816673",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
+          "x-WM-UUID" : "6dfc3803-413b-4219-ae7d-d09877598074",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/User",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "227b64fb-50c0-4e07-aeb3-efa06fb2ca64",
+        "x-WM-METHOD_NAME" : "getUser",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
+      },
+      "put" : {
+        "tags" : [ "UserController" ],
+        "description" : "Updates the User instance associated with the given id.",
+        "operationId" : "UserController-editUser-2--573108520",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
+          "x-WM-UUID" : "a9b59f06-3017-484a-afc8-1273abadefb7",
+          "x-WM-EDITABLE" : true
+        }, {
+          "in" : "body",
+          "name" : "User",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/User",
+            "x-WM-TYPE_ARGUMENTS" : [ ]
+          },
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.p9app.mytestdatabase.User",
+          "x-WM-UUID" : "843a883b-d2c4-47bb-9efb-4ac263b10b51",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/User",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "c3c5070c-352c-469c-98c7-c2028e06ced4",
+        "x-WM-METHOD_NAME" : "editUser",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
+      },
+      "delete" : {
+        "tags" : [ "UserController" ],
+        "description" : "Deletes the User instance associated with the given id.",
+        "operationId" : "UserController-deleteUser-1--2056816673",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
+          "x-WM-UUID" : "e5e6b7ee-7006-4409-ac27-bcb8f89bc0d2",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "type" : "boolean"
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "8679d0c3-fd25-4c9a-bacb-0ec13e04bbe6",
+        "x-WM-METHOD_NAME" : "deleteUser",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
+      },
+      "x-WM-TAG" : "UserController",
+      "x-WM-BASE_PATH" : "/MyTestDatabase/User",
+      "x-WM-COMPLETE_PATH" : "/MyTestDatabase/User/{id}",
+      "x-WM-RELATIVE_PATH" : "/{id}"
+    },
+    "/MyTestDatabase/procedureExecutor/procedure/execute/wm_custom" : {
+      "post" : {
+        "tags" : [ "ProcedureExecutionController" ],
+        "description" : "Process request to execute custom Procedure",
+        "operationId" : "ProcedureExecutionController-executeWMCustomProcedure-1--282256460",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "CustomProcedure",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/CustomProcedure",
+            "x-WM-TYPE_ARGUMENTS" : [ ]
+          },
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.wavemaker.runtime.data.model.CustomProcedure",
+          "x-WM-UUID" : "8ff599f3-eb23-4326-92f1-81c8e38c2234",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "type" : "array",
+              "uniqueItems" : false,
+              "items" : {
+                "$ref" : "#/definitions/Object",
+                "x-WM-TYPE_ARGUMENTS" : [ ]
+              },
+              "x-WM-IS_LIST" : true
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "d8544daf-7c4e-43e6-9d2d-ea750646c23b",
+        "x-WM-METHOD_NAME" : "executeWMCustomProcedure",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
+      },
+      "x-WM-TAG" : "ProcedureExecutionController",
+      "x-WM-BASE_PATH" : "/MyTestDatabase/procedureExecutor",
+      "x-WM-COMPLETE_PATH" : "/MyTestDatabase/procedureExecutor/procedure/execute/wm_custom",
+      "x-WM-RELATIVE_PATH" : "/procedure/execute/wm_custom"
+    },
+    "/MyTestDatabase/queryExecutor/queries/wm_custom" : {
+      "post" : {
+        "tags" : [ "QueryExecutionController" ],
+        "description" : "Process request to execute customer queries",
+        "operationId" : "QueryExecutionController-executeWMCustomQuery-2-107741091",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "CustomQuery",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/CustomQuery",
+            "x-WM-TYPE_ARGUMENTS" : [ ]
+          },
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.wavemaker.runtime.data.model.CustomQuery",
+          "x-WM-UUID" : "6cefec3d-ad91-4975-bf3d-2cad9b52b6bc",
+          "x-WM-EDITABLE" : true
+        }, {
+          "name" : "page",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
+        }, {
+          "name" : "size",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : 20,
+          "format" : "int32",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "sort",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "x-WM-EDITABLE" : false
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Page",
+              "x-WM-TYPE_ARGUMENTS" : [ {
+                "$ref" : "#/definitions/Object",
+                "x-WM-TYPE_ARGUMENTS" : [ ]
+              } ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "8810dc0e-d989-442c-9ad2-d2f52daedbdb",
+        "x-WM-METHOD_NAME" : "executeWMCustomQuery",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
+      },
+      "x-WM-TAG" : "QueryExecutionController",
+      "x-WM-BASE_PATH" : "/MyTestDatabase/queryExecutor",
+      "x-WM-COMPLETE_PATH" : "/MyTestDatabase/queryExecutor/queries/wm_custom",
+      "x-WM-RELATIVE_PATH" : "/queries/wm_custom"
+    },
+    "/MyTestDatabase/queryExecutor/queries/wm_custom_update" : {
+      "post" : {
+        "tags" : [ "QueryExecutionController" ],
+        "description" : "Process request to execute customer queries",
+        "operationId" : "QueryExecutionController-executeWMCustomQuery-1--718813271",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "CustomQuery",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/CustomQuery",
+            "x-WM-TYPE_ARGUMENTS" : [ ]
+          },
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.wavemaker.runtime.data.model.CustomQuery",
+          "x-WM-UUID" : "45dd97e1-034d-41f0-91f0-cb18171cec2f",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "type" : "integer",
+              "format" : "int32"
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "415bc251-17a8-4f40-b943-fd23168cb293",
+        "x-WM-METHOD_NAME" : "executeWMCustomQuery",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
+      },
+      "x-WM-TAG" : "QueryExecutionController",
+      "x-WM-BASE_PATH" : "/MyTestDatabase/queryExecutor",
+      "x-WM-COMPLETE_PATH" : "/MyTestDatabase/queryExecutor/queries/wm_custom_update",
+      "x-WM-RELATIVE_PATH" : "/queries/wm_custom_update"
+    }
+  },
+  "definitions" : {
+    "User" : {
+      "allOf" : [ {
+        "$ref" : "#/definitions/Serializable"
+      }, {
+        "properties" : {
+          "column4" : {
+            "type" : "string"
+          },
+          "column2" : {
+            "type" : "string"
+          },
+          "column3" : {
+            "type" : "string"
+          },
+          "id" : {
+            "type" : "integer",
+            "format" : "int32"
+          }
+        }
+      } ],
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.p9app.mytestdatabase.User",
+      "x-WM-TAGS" : [ "UserController" ]
+    },
+    "Sort" : {
+      "allOf" : [ {
+        "$ref" : "#/definitions/Iterable"
+      }, {
+        "$ref" : "#/definitions/Serializable"
+      }, {
+        "properties" : {
+          "orders" : {
+            "type" : "array",
+            "uniqueItems" : false,
+            "items" : {
+              "$ref" : "#/definitions/Sort$Order",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            },
+            "x-WM-IS_LIST" : true
+          }
+        }
+      } ],
+      "x-WM-FULLY_QUALIFIED_NAME" : "org.springframework.data.domain.Sort",
+      "x-WM-TAGS" : [ "UserController" ]
+    },
+    "Iterable" : {
+      "x-WM-TAGS" : [ "UserController" ]
+    },
+    "CustomQueryParam" : {
+      "properties" : {
+        "paramValue" : {
+          "$ref" : "#/definitions/Object",
+          "x-WM-TYPE_ARGUMENTS" : [ ]
+        },
+        "paramName" : {
+          "type" : "string"
+        },
+        "paramType" : {
+          "type" : "string"
+        },
+        "isList" : {
+          "type" : "boolean"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.wavemaker.runtime.data.model.CustomQueryParam",
+      "x-WM-TAGS" : [ "QueryExecutionController" ]
+    },
+    "CustomProcedure" : {
+      "properties" : {
+        "procedureStr" : {
+          "type" : "string"
+        },
+        "procedureParams" : {
+          "type" : "array",
+          "uniqueItems" : false,
+          "items" : {
+            "$ref" : "#/definitions/CustomProcedureParam",
+            "x-WM-TYPE_ARGUMENTS" : [ ]
+          },
+          "x-WM-IS_LIST" : true
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.wavemaker.runtime.data.model.CustomProcedure",
+      "x-WM-TAGS" : [ "ProcedureExecutionController" ]
+    },
+    "QueryFilter" : {
+      "properties" : {
+        "attributeType" : {
+          "type" : "string",
+          "enum" : [ "BIG_DECIMAL", "BIG_INTEGER", "BLOB", "BOOLEAN", "BYTE", "CALENDAR", "CALENDAR_DATE", "CHARACTER", "CLOB", "CURRENCY", "DATE", "DOUBLE", "FLOAT", "INTEGER", "LONG", "LOCALE", "STRING", "SHORT", "TEXT", "TIME", "DATETIME", "TIMESTAMP", "TIMEZONE", "TRUE_FALSE", "YES_NO" ]
+        },
+        "filterCondition" : {
+          "type" : "string",
+          "enum" : [ "STARTING_WITH", "ENDING_WITH", "CONTAINING", "EQUALS", "NOT_EQUALS", "BETWEEN", "LESS_THAN", "LESS_THAN_OR_EQUALS", "GREATER_THAN", "GREATER_THAN_OR_EQUALS", "NULL", "EMPTY", "NULL_OR_EMPTY" ]
+        },
+        "attributeValue" : {
+          "$ref" : "#/definitions/Object",
+          "x-WM-TYPE_ARGUMENTS" : [ ]
+        },
+        "attributeName" : {
+          "type" : "string"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.wavemaker.runtime.data.expression.QueryFilter",
+      "x-WM-TAGS" : [ "UserController" ]
+    },
+    "Page" : {
+      "allOf" : [ {
+        "$ref" : "#/definitions/Slice"
+      }, {
+        "properties" : {
+          "size" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "numberOfElements" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "totalPages" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "first" : {
+            "type" : "boolean"
+          },
+          "totalElements" : {
+            "type" : "integer",
+            "format" : "int64"
+          },
+          "number" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "sort" : {
+            "$ref" : "#/definitions/Sort",
+            "x-WM-TYPE_ARGUMENTS" : [ ]
+          },
+          "content" : {
+            "type" : "array",
+            "uniqueItems" : false,
+            "items" : {
+              "$ref" : "#/definitions/Object",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            },
+            "x-WM-IS_LIST" : true
+          },
+          "last" : {
+            "type" : "boolean"
+          }
+        }
+      } ],
+      "x-WM-FULLY_QUALIFIED_NAME" : "org.springframework.data.domain.Page",
+      "x-WM-TAGS" : [ "UserController", "QueryExecutionController" ]
+    },
+    "Sort$Order" : {
+      "allOf" : [ {
+        "$ref" : "#/definitions/Serializable"
+      }, {
+        "properties" : {
+          "direction" : {
+            "type" : "string",
+            "enum" : [ "ASC", "DESC" ]
+          },
+          "nullHandling" : {
+            "type" : "string",
+            "enum" : [ "NATIVE", "NULLS_FIRST", "NULLS_LAST" ]
+          },
+          "ignoreCase" : {
+            "type" : "boolean"
+          },
+          "property" : {
+            "type" : "string"
+          }
+        }
+      } ],
+      "x-WM-FULLY_QUALIFIED_NAME" : "org.springframework.data.domain.Sort.Order",
+      "x-WM-TAGS" : [ "UserController" ]
+    },
+    "Serializable" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "java.io.Serializable",
+      "x-WM-TAGS" : [ "UserController" ]
+    },
+    "CustomQuery" : {
+      "properties" : {
+        "queryStr" : {
+          "type" : "string"
+        },
+        "nativeSql" : {
+          "type" : "boolean"
+        },
+        "queryParams" : {
+          "type" : "array",
+          "uniqueItems" : false,
+          "items" : {
+            "$ref" : "#/definitions/CustomQueryParam",
+            "x-WM-TYPE_ARGUMENTS" : [ ]
+          },
+          "x-WM-IS_LIST" : true
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.wavemaker.runtime.data.model.CustomQuery",
+      "x-WM-TAGS" : [ "QueryExecutionController" ]
+    },
+    "CustomProcedureParam" : {
+      "properties" : {
+        "paramValue" : {
+          "$ref" : "#/definitions/Object",
+          "x-WM-TYPE_ARGUMENTS" : [ ]
+        },
+        "paramName" : {
+          "type" : "string"
+        },
+        "valueType" : {
+          "type" : "string"
+        },
+        "procedureParamType" : {
+          "type" : "string",
+          "enum" : [ "IN", "OUT", "IN_OUT" ]
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.wavemaker.runtime.data.model.CustomProcedureParam",
+      "x-WM-TAGS" : [ "ProcedureExecutionController" ]
+    },
+    "Object" : {
+      "x-WM-TAGS" : [ "UserController", "ProcedureExecutionController", "QueryExecutionController" ]
+    },
+    "Slice" : {
+      "allOf" : [ {
+        "$ref" : "#/definitions/Iterable"
+      }, {
+        "properties" : {
+          "size" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "numberOfElements" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "first" : {
+            "type" : "boolean"
+          },
+          "number" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "sort" : {
+            "$ref" : "#/definitions/Sort",
+            "x-WM-TYPE_ARGUMENTS" : [ ]
+          },
+          "content" : {
+            "type" : "array",
+            "uniqueItems" : false,
+            "items" : {
+              "$ref" : "#/definitions/Object",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            },
+            "x-WM-IS_LIST" : true
+          },
+          "last" : {
+            "type" : "boolean"
+          }
+        }
+      } ],
+      "x-WM-FULLY_QUALIFIED_NAME" : "org.springframework.data.domain.Slice",
+      "x-WM-TAGS" : [ "UserController" ]
+    }
+  }
+}
